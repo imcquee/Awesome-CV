@@ -1,6 +1,6 @@
 # Resume
 
-[PDF LINK](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/imcquee/Resume/master/examples/resume.pdf).
+[PDF LINK](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/imcquee/Resume/master/examples/resume.pdf)
 
 <div align="center">
   <img alt="Résumé" src="https://raw.githubusercontent.com/imcquee/Resume/master/examples/resume.png" width="70%" />
