@@ -1,6 +1,7 @@
 .PHONY: examples
 
 CC = xelatex
+IM = convert
 EXAMPLES_DIR = examples
 RESUME_DIR = examples/resume
 CV_DIR = examples/cv
@@ -12,6 +13,13 @@ examples: $(foreach x, coverletter cv resume, $x.pdf)
 resume.pdf: $(EXAMPLES_DIR)/resume.tex $(RESUME_SRCS)
 	$(CC) -output-directory=$(EXAMPLES_DIR) $<
 
+resume.png: 
+	$(IM) -density 300 -quality 100 -flatten $(EXAMPLES_DIR)/resume.pdf $(EXAMPLES_DIR)/$@
+
+resume:  
+	resume.pdf 
+	resume.png
+
 cv.pdf: $(EXAMPLES_DIR)/cv.tex $(CV_SRCS)
 	$(CC) -output-directory=$(EXAMPLES_DIR) $<
 
@@ -20,3 +28,4 @@ coverletter.pdf: $(EXAMPLES_DIR)/coverletter.tex
 
 clean:
 	rm -rf $(EXAMPLES_DIR)/*.pdf
+	rm -rf $(EXAMPLES_DIR)/*.png
